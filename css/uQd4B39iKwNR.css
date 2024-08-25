@@ -1,0 +1,421 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+v2.0 | 20110126
+License: none (public domain)
+*/
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,300;0,400;0,700;1,100;1,400;1,700&family=Mooli&display=swap');
+
+@font-face {
+    font-family: spoon;
+    src: url('../fonts/black%20spoon.ttf');
+}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+margin: 0;
+padding: 0;
+border: 0;
+font-size: 100%;
+font: inherit;
+vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+display: block;
+}
+body {
+line-height: 1;
+}
+ol, ul {
+list-style: none;
+}
+blockquote, q {
+quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+content: '';
+content: none;
+}
+table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+*{
+    box-sizing: border-box;
+}
+audio{
+    display: none;
+}
+html{
+    font-size: 10px;
+}
+body{
+    font-size: 1.8rem;
+    line-height: 3.4rem;
+    letter-spacing: 2px;
+    text-shadow: rgb(22, 82, 240) -2px 2px 2px;
+    text-align: center;
+    font-family: 'Mooli', sans-serif;
+    background-size: cover;
+    color: white;
+    background-color: rgb(0 85 254);
+    overflow: hidden;
+}
+#pointer-dot{
+    border-color: rgb(22, 82, 240) !important;
+}
+.clear{
+    clear: both;
+}
+.italic{
+    font-style: italic;
+}
+em, .colored{
+    color: rgb(22, 82, 240);
+    text-shadow: #000 -2px 2px 2px;
+    font-weight: 500;
+    font-family: spoon;
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+.enter{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #0e0f11;
+    z-index: 500;
+    display: none;
+    font-family: spoon;
+}
+.enter.visible{
+    display: block;
+}
+.enter a{
+    height: 100vh;
+    font-size: 3rem;
+    padding-top: 40vh;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: block;
+    color: white;
+    transtion: text-decoration 200ms linear;
+    cursor: pointer !important;
+}
+.pop-up{
+    position: fixed;
+    background: rgba(255, 255, 255, 0.9);
+    width: 50%;
+    top: 10%;
+    left: 25%;
+    font-size: 3rem;
+    text-align: left;
+    z-index: 100;
+    border: 3px solid #000;
+    display: none;
+}
+.pop-up.visible{
+    display: block;
+}
+.pop-up .cross{
+    text-decoration: none;
+    color: #000;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+}
+.pop-up p{
+    margin: 3rem;
+    color: #000;
+}
+.pop-up span{
+    font-size: 4rem;
+    font-weight: 900;
+    margin-right: 1rem;
+}
+.pop-up img{
+    width: 3rem;
+    vertical-align: middle;
+    margin-right: 1rem;
+}
+.wrapper{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    margin: 0 auto;
+    overflow-y: scroll;
+}
+.videobg{
+    height: auto;
+    width: 100%;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 15%;
+}
+main{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+}
+a.mute{
+    display: block;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: url(../images/nPyo0PIS1l7a.png) no-repeat;
+    background-size: contain;
+    border-radius: 50%;
+    position: fixed;
+    top: 1rem;
+    left: 0;
+    margin-left: 1rem;
+    z-index: 400;
+}
+a.mute.muted{
+    background: url(../images/WLnpE6oTNduM.png) no-repeat;
+    background-size: contain;
+}
+a.how{
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    margin-right: 1rem;
+    font-size: 3rem;
+    font-family: 'spoon';
+    text-decoration: none;
+    color: #fff;
+    z-index: 400;
+}
+a.how:after{
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: rgb(22, 82, 240);
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+section{
+    position: absolute;
+    width: 100%;
+    padding: 0 3rem;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+.content{
+    width: 64rem;
+    margin: 0 auto;
+}
+.content::-webkit-scrollbar {
+    display: none;
+}
+.logo{
+    width: 60%;
+    animation: pulse 0.5s linear infinite alternate;
+    border-radius: 50%;
+    margin-top: 5rem;
+}
+.title {    
+    font-size: 6.4rem;
+    line-height: 6.4rem;
+    color: rgb(22, 82, 240);
+    text-shadow: #000 -2px 4px 2px;
+    letter-spacing: 0.4rem;
+    font-family: 'spoon';
+}
+.title span{
+    display: block;
+}
+.title em{
+    font-family: 'spoon';
+    color: white;
+    margin-right: 1.2rem;
+}
+.subtitle{
+    font-size: 3rem;
+    line-height: 4rem;
+    font-family: 'spoon';
+    text-transform: uppercase;
+    font-weight: 700;
+    color: white;
+    text-shadow: #000 -2px 4px 2px;
+}
+.coin{
+    font-size: 2rem;
+}
+.coin span{
+    text-decoration: line-through;
+}
+p{
+    margin-bottom: 1rem;
+}
+.left,.right{
+    float: left;
+    width: 50%;
+    margin-top: 3rem;
+}
+.left p,.right p{
+    font-size: 5rem;
+    line-height: 5rem;
+    font-weight: 900;
+}
+.left span, .right span{
+    display: block;
+    color: rgb(22, 82, 240);
+    text-shadow: #000 -2px 4px 2px;
+    font-family: spoon;
+}
+h3{
+    text-transform: uppercase;
+    font-size: 3rem;
+    margin: 6rem 0 3rem 0;
+    font-family: spoon;
+    text-shadow: #000 -2px 2px 2px;
+}
+.ca{
+    margin-bottom: 3rem;
+}
+.toke{
+    width: 100%;
+}
+.toke li{
+    display: block;
+    width: 100%;
+    margin-bottom: 3rem;
+}
+.toke div{
+    width: 100%;
+    height: 1rem;
+    margin-top: 1rem;
+    background: rgba(255, 255, 255, 0.2);
+}
+.toke span{
+    display: block;
+    height: 100%;
+    width: 100%;
+    background: #48ab3d;
+}
+.toke .two span{
+    width: 100%;
+}
+.toke .three span{
+    width: 22%;
+}
+.toke .four span{
+    width: 26%;
+}
+.toke .five span{
+    width: 7%;
+}
+.mail{
+    font-size: 2.4rem;
+    text-decoration: none;
+    color: #b9b9b9;
+    text-shadow: #000 -2px 2px 2px;
+}
+.socials{
+    margin: 8rem 0 4rem 0;
+}
+.socials a{
+    font-size: 4rem;
+    text-decoration: none;
+}
+.socials li{
+    display: inline-block;
+    width: calc(100% / 6 - 7px);
+    text-align: center;
+}
+.socials img{
+    background: white;
+    border-radius: 50%;
+    border: 3px solid white;
+}
+.socials img{
+    width: 80%;
+}
+.copyright{
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 2rem;
+}
+/*******************************************************************/
+/*******************************************************************/
+/***************************ANIMATIONS******************************/
+/*******************************************************************/
+/*******************************************************************/
+
+
+@keyframes pulse {
+    0% {
+        transform: translateY(0);
+    }
+    
+    100% {
+        transform: translateY(-1rem);
+    }
+}
+
+/*******************************************************************/
+/*******************************************************************/
+/***************************RESPONSIVE******************************/
+/*******************************************************************/
+/*******************************************************************/
+
+@media (max-width: 1024px){
+    html body{
+        background-size: auto 300%;
+    }
+    body .pop-up{
+        width: 95%;
+        top: 10%;
+        left: 9px;
+        padding: 2rem;
+    }
+    body .wrapper{
+        width: 100%;
+    }
+
+    body section{
+        padding: 0 1.5rem;
+    }
+    body .logo{
+        width: 100%;
+        margin-top: 8rem;
+    }
+    body .ca{
+        font-size: 0.8rem;
+    }
+
+    body .content{
+        width: 100%;
+    }
+
+    body #pointer-ring, body #pointer-dot{
+        display: none;
+    }
+
+    body snowfall{
+        display: none !important;
+    }
+
+    video{
+        transform: scale(3);
+    }
+}
